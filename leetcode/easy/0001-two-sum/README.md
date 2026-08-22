@@ -4,7 +4,7 @@
 
 ## Problem
 
-Given an array of integers `nums` and an integer `target`, return  *indices of the two numbers such that they add up to `target`*.
+You are given an array of integers `nums` and an integer `target`, return  *indices of the two numbers such that they add up to `target`*.
 
 You may assume that each input would have  ***exactly *one solution**, and you may not use the* same* element twice.
 
@@ -53,21 +53,20 @@ Output: [0,1]
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 20.5 MB (beats 17.61%)  
-**Submitted:** 2026-07-15T17:11:17.374Z  
+**Runtime:** 1 ms (beats 61.33%)  
+**Memory:** 20.7 MB (beats 6.91%)  
+**Submitted:** 2026-08-22T05:28:24.507Z  
 
 ```py
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-       prevmap={}
-       for i,n in enumerate(nums):
-                      
-            n2=target-n
-            if n2 in prevmap:
-                 return [prevmap[n2],i]
-            prevmap[n]=i    
-
+        prevmap={}
+        for i,n in enumerate(nums):
+            diff = target-n
+            if diff in prevmap:
+                return [prevmap[diff],i]
+            prevmap[n]=i   
+        return     
 ```
 
 ---
