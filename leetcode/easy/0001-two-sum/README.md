@@ -53,18 +53,17 @@ Output: [0,1]
 ## Solution
 
 **Language:** Python  
-**Runtime:** 1 ms (beats 61.33%)  
-**Memory:** 20.7 MB (beats 6.91%)  
-**Submitted:** 2026-08-22T05:28:24.507Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 20.5 MB (beats 17.82%)  
+**Submitted:** 2026-08-22T05:30:07.962Z  
 
 ```py
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         prevmap={}
         for i,n in enumerate(nums):
-            diff = target-n
-            if diff in prevmap:
-                return [prevmap[diff],i]
+            if target-n in prevmap:
+                return [prevmap[target-n],i]
             prevmap[n]=i   
         return     
 ```
