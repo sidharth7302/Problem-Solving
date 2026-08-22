@@ -41,24 +41,23 @@ Explanation: In this case, no transactions are done and the max profit = 0.
 ## Solution
 
 **Language:** Python  
-**Runtime:** 62 ms (beats 26.93%)  
-**Memory:** 28.6 MB (beats 75.55%)  
-**Submitted:** 2026-08-14T15:58:04.625Z  
+**Runtime:** 61 ms (beats 28.50%)  
+**Memory:** 28.5 MB (beats 75.86%)  
+**Submitted:** 2026-08-22T05:41:24.072Z  
 
 ```py
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        l,r=0,1
+        l=0
         maxp=0
-        while r<len(prices):
-            
-            if prices[l]<prices[r]:
-                profit=prices[r]-prices[l]
-                maxp=max(maxp,profit)
+        for r in range(1,len(prices)):
+            if prices[r]>prices[l]:
+                 profit=prices[r]-prices[l]
+                 maxp=max(maxp,profit)
             else:
                 l=r
-            r+=1
-        return maxp            
+        return maxp
+                   
 
 
 ```
